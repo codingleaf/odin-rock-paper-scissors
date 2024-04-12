@@ -1,3 +1,5 @@
+"use strict";
+
 // randomly returns either rock, paper, or scissor
 function getComputerChoice() {
   const choiceArray = ["ROCK", "PAPER", "SCISSOR"];
@@ -15,8 +17,8 @@ function playRound(playerSelection, computerSelection) {
     return null;
   }
 
-  playerIndex = choiceArray.indexOf(playerSelection);
-  computerIndex = choiceArray.indexOf(computerSelection);
+  let playerIndex = choiceArray.indexOf(playerSelection);
+  let computerIndex = choiceArray.indexOf(computerSelection);
   switch (playerIndex - computerIndex) {
     case 0: 
       return "It's a Tie!";
@@ -31,3 +33,14 @@ function playRound(playerSelection, computerSelection) {
       return null;
   }
 }
+
+function playGame() {
+  for (let i = 1; i <= 5; i++) {
+    let playerSelection = prompt(`Round ${i}\nEnter Choice (Rock, Paper, Scissor)`);
+    let computerSelection = getComputerChoice();
+    console.log(`Round ${i}`);
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+playGame();
