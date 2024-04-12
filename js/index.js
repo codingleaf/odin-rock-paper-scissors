@@ -1,7 +1,7 @@
 // randomly returns either rock, paper, or scissor
 function getComputerChoice() {
   const choiceArray = ["ROCK", "PAPER", "SCISSOR"];
-  return choice[Math.floor(Math.random() * 3)];
+  return choiceArray[Math.floor(Math.random() * 3)];
 }
 
 // calculates the winner of the round
